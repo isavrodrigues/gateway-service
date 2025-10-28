@@ -1,0 +1,5 @@
+/Users/isa/5-semestre/pma.2025.2/api/gateway-service/src/main/java/store/gateway/GatewayApplication.java
+/Users/isa/5-semestre/pma.2025.2/api/gateway-service/src/main/java/store/gateway/GatewayResource.java
+/Users/isa/5-semestre/pma.2025.2/api/gateway-service/src/main/java/store/gateway/security/AuthorizationFilter.java
+/Users/isa/5-semestre/pma.2025.2/api/gateway-service/src/main/java/store/gateway/security/CorsFilter.java
+/Users/isa/5-semestre/pma.2025.2/api/gateway-service/src/main/java/store/gateway/security/RouterValidator.java
