@@ -15,27 +15,9 @@ spec:
       containers:
         - name: gateway
           image: isavrodrigues/gateway:latest
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          env:
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-configmap
-                  key: POSTGRES_DB
-            - name: DATABASE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secrets
-                  key: POSTGRES_USER
-            - name: DATABASE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secrets
-                  key: POSTGRES_PASSWORD
-            - name: DATABASE_URL
-              value: "jdbc:postgresql://postgres:5432/$(POSTGRES_DB)"
           resources:
             requests:
               memory: "200Mi"
@@ -53,11 +35,11 @@ metadata:
   labels:
     app: gateway
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 80
       protocol: TCP
       targetPort: 8080
+
   selector:
     app: gateway
-
